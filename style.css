@@ -7,13 +7,156 @@
 }
 
 body{
+    font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 header{
     background-color: rgb(135, 135, 135);
-    width: 300px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+header > .logo{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > .logo > h1{
+    text-align: center;
+}
+
+header > .nav_list{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+
+header > .nav_list > .botton_list{
+    cursor: pointer;
+}
+
+
+/*estilizando menu lateral*/
+#menu_lateral{
+    display: none;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    background-color: transparent;
+    color: white;
+}
+
+#menu_lateral > .conteudo_menu{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(211, 0, 197, 0.758);
+}
+
+#menu_lateral > .conteudo_menu > .fechar_navLateral{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 10%;
+    padding: 10%;
+    font-size: 30px;
+}
+
+#menu_lateral > .conteudo_menu > .selecao_menuLateral{
+    width: 100%;
+    height: 90%;
+}
+
+#menu_lateral > .conteudo_menu > .selecao_menuLateral > ul{
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+}
+
+#menu_lateral > .conteudo_menu > .selecao_menuLateral > ul > li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    margin-bottom: 3%;
+    gap: 20px;
+    background-color: aqua;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#menu_lateral > .conteudo_menu > .selecao_menuLateral > ul > li > i{
+    font-size: 2.2rem;
+}
+
+/*estilizando modal do login*/
+#modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.393);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+#modal > .conteudo_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    height: 65%;
+    padding: 20px;
+    gap: 30px;
+}
+
+#modal > .conteudo_modal > p{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#modal > .conteudo_modal > input{
+    width: 100%;
+    height: 10%;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(162, 162, 162, 0.555);
+}
+
+#modal > .conteudo_modal > button{
+    width: 60%;
+    height: 8%;
+}
+
+@media (min-width: 768px){
+    #modal > .conteudo_modal{
+        width: 500px;
+    }
+}
