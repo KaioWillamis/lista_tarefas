@@ -65,7 +65,7 @@ header > .nav_list > .botton_list{
     flex-direction: column;
     width: 70%;
     height: 100%;
-    background-color: rgba(211, 0, 197, 0.758);
+    background-color: rgba(118, 118, 118, 0.758);
 }
 
 #menu_lateral > .conteudo_menu > .fechar_navLateral{
@@ -98,7 +98,6 @@ header > .nav_list > .botton_list{
     height: 15%;
     margin-bottom: 3%;
     gap: 20px;
-    background-color: aqua;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
