@@ -20,10 +20,11 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: white;
 }
 
 header > .logo{
-    width: 75%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@ header > .logo > h1{
 }
 
 header > .nav_list{
-    width: 25%;
+    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -47,11 +48,15 @@ header > .nav_list > .botton_list{
     cursor: pointer;
 }
 
+nav{
+    display: none;
+}
+
 
 /*estilizando menu lateral*/
 #menu_lateral{
     display: none;
-    justify-content: end;
+    justify-content: left;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -71,7 +76,7 @@ header > .nav_list > .botton_list{
 #menu_lateral > .conteudo_menu > .fechar_navLateral{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: left;
     width: 100%;
     height: 10%;
     padding: 10%;
@@ -136,17 +141,52 @@ header > .nav_list > .botton_list{
 }
 
 #modal > .conteudo_modal > p{
-    font-size: 3rem;
+    font-size: 2.0rem;
     font-weight: bold;
 }
 
 #modal > .conteudo_modal > input{
     width: 100%;
-    height: 10%;
+    height: 25%;
     padding: 5px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 1px 5px rgba(162, 162, 162, 0.555);
+}
+
+#modal > .conteudo_modal > #enviar{
+    width: 100%;
+    height: 25%;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+#modal > .conteudo_modal > .buttons_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+}
+
+#modal > .conteudo_modal > .buttons_modal > button{
+    width: 50%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+#modal > .conteudo_modal > .buttons_modal > #esqueci_senha{
+    color: rgb(100, 100, 255);
+}
+
+#modal > .conteudo_modal > .buttons_modal > .fechar_modal{
+    width: 40%;
+    background-color: bisque;
+    border-radius: 20px;
 }
 
 #modal > .conteudo_modal > button{
@@ -155,6 +195,62 @@ header > .nav_list > .botton_list{
 }
 
 @media (min-width: 768px){
+    body{
+        flex-direction: row;
+    }
+
+    header{
+        flex-direction: column;
+        width: 300px;
+        height: 100%;
+    }
+
+    header > .nav_list{
+        display: none;
+    }
+
+    header > .logo{
+        width: 100%;
+        height: 10%;
+        color: white;
+    }
+
+    header > nav{
+        display: flex;
+        width: 100%;
+        height: 90%;
+    }
+
+    nav > .selecao_menuLateral{
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+
+    nav > .selecao_menuLateral > ul{
+        width: 100%;
+        height: 100%;
+        list-style-type: none;
+    }
+
+    nav > .selecao_menuLateral > ul > li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 15%;
+        margin-bottom: 3%;
+        gap: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    nav > .selecao_menuLateral > ul > li > i{
+        font-size: 2.5rem;
+    }
+
     #modal > .conteudo_modal{
         width: 500px;
     }

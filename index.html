@@ -9,20 +9,37 @@
 </head>
 <body>
     <header>
-            <div class="logo">
-                <h1>Lista de Tarefas</h1>
+        <div class="nav_list">
+            <div class="botton_list">
+                <i class="bi bi-list"></i>
             </div>
-            <div class="nav_list">
-                <div class="botton_list">
-                    <i class="bi bi-list"></i>
-                </div>
-            </div>
+        </div>
+        <div class="logo">
+            <h1>Lista de Tarefas</h1>
+        </div>
+
+        <nav>
+            <div class="selecao_menuLateral">
+                <ul>
+                    <li class="abrir_modal">
+                        <i class="bi bi-person-circle"></i>
+                        <p>Login</p>
+                    </li>
+                    
+                    <li>
+                        <i class="bi bi-bar-chart-fill"></i>
+                        <p style="font-size: 1.2rem;">Meu desempenho</p>
+                    </li>
+                </ul>
+            </div>            
+        </nav>
     </header>
 
     <main>
-
+        
     </main>
 
+    <!--Menu Lateral-->
     <div id="menu_lateral">
         <div class="conteudo_menu">
             <div class="fechar_navLateral">
@@ -44,12 +61,13 @@
             </div>
         </div>
     </div>
+    <!--Fim do Menu Lateral-->
 
     <!--Modal Login-->
     <div id="modal">
         <div class="conteudo_modal">
             <p>Faça seu Login</p>
-            <input type="text" placeholder="Nome e Sobrenome" id="nome">
+            <input type="text"  placeholder="Nome e Sobrenome" id="nome">
             <input type="email" placeholder="aaaaaaa@gmail.com" id="email">
             <input type="password" placeholder="senha" id="senha">
             <button id="enviar">Enviar</button>
