@@ -14,13 +14,34 @@ body{
 }
 
 header{
-    background-color: rgb(135, 135, 135);
+    background: linear-gradient(90deg, #5A2E8C, #6C1E9C, #4A1C7D, #5A2E8C);
+    background-size: 400% 100%; /* Estica mais o gradiente */
+    animation: gradientAnimation 15s infinite linear; /* Animação contínua */
     width: 100%;
     height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: white;
+}
+
+/* Animação suave do gradiente */
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%; /* Começa na posição inicial */
+    }
+    25% {
+      background-position: 100% 50%; /* Move para a direita */
+    }
+    50% {
+      background-position: 200% 50%; /* Move para o meio */
+    }
+    75% {
+      background-position: 300% 50%; /* Move para a posição final */
+    }
+    100% {
+      background-position: 0% 50%; /* Retorna ao começo */
+    }
 }
 
 header > .logo{
@@ -50,6 +71,35 @@ header > .nav_list > .botton_list{
 
 nav{
     display: none;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main > .lista{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 90%;
+    height: 300px;
+    border: 5px solid black;
+    margin: 5%;
+}
+
+main > .lista > .titulo_lista_tarefas{
+    width: 100%;
+    height: 10%;
+    padding: 1%;
+    background-color: aqua;
+}
+
+main > .lista > .list_tarefas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 
@@ -162,6 +212,7 @@ nav{
     border-radius: 10px;
     font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
 }
 
 #modal > .conteudo_modal > .buttons_modal{
@@ -179,6 +230,7 @@ nav{
     height: 100%;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #modal > .conteudo_modal > .buttons_modal > #esqueci_senha{
@@ -247,6 +299,11 @@ nav{
         font-size: 1.5rem;
         font-weight: bold;
         cursor: pointer;
+        transition: 0.5s;
+    }
+
+    nav > .selecao_menuLateral > ul > li:hover{
+        transform: scale(1.1);
     }
 
     nav > .selecao_menuLateral > ul > li > i{
