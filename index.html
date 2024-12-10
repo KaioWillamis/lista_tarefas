@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Lista de Tarefas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
@@ -35,9 +35,16 @@
         </nav>
     </header>
 
+    <!--Conteudo Principal-->
     <main>
-        
+        <div>
+            <div class="list_tarefas">
+                <input type="text" placeholder="Tarefa para ser feita" id="tarefa">
+                <button>Adicionar</button>
+            </div>
+        </div>
     </main>
+    <!--Fim do Conteudo Principal-->
 
     <!--Menu Lateral-->
     <div id="menu_lateral">
@@ -67,9 +74,9 @@
     <div id="modal">
         <div class="conteudo_modal">
             <p>Faça seu Login</p>
-            <input type="text"  placeholder="Nome e Sobrenome" id="nome">
-            <input type="email" placeholder="aaaaaaa@gmail.com" id="email">
-            <input type="password" placeholder="senha" id="senha">
+            <input type="text"  placeholder="Informe seu Login" id="login">
+            <input type="email" placeholder="Seu email" id="email">
+            <input type="password" placeholder="Sua senha" id="senha">
             <button id="enviar">Enviar</button>
             <div class="buttons_modal">
                 <button id="esqueci_senha">Esqueci minha senha</button>
@@ -78,6 +85,6 @@
         </div>
     </div>
     <!--Fim do Modal Login-->
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
