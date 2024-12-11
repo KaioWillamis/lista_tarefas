@@ -1,3 +1,5 @@
+/*Variaveis da lista*/
+const titulos_lista = document.querySelectorAll(".titulos_lista");
 
 /*Variaveis do modal menu lateral*/
 const abrir_navLateral = document.querySelector(".botton_list");
@@ -9,6 +11,30 @@ const modal = document.querySelector("#modal");
 const abrir_modal = document.querySelectorAll(".abrir_modal");
 const fechar_modal = document.querySelector(".fechar_modal");
 const esqueci_senha = document.querySelector("#esqueci_senha");
+
+/*Função para atualizar titulo da Lista*/
+titulos_lista.forEach(function(titulo_lista) {
+    titulo_lista.addEventListener("click", function() {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.classList.add("input-editavel");
+        input.value = titulo_lista.textContent;  // Pega o texto do título específico
+        titulo_lista.textContent = ""; // Limpa o conteúdo do título
+        titulo_lista.appendChild(input); // Adiciona o input ao DOM
+
+        input.focus();
+
+        input.addEventListener("blur", function() {
+            titulo_lista.textContent = input.value || "Titulo da Lista"; // Atualiza o título específico
+        });
+
+        input.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                input.blur(); // Salva ao pressionar Enter
+            }
+        });
+    });
+});
 
 /* Funções do modal Login*/
 abrir_modal.forEach((btn) => {
