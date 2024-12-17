@@ -5,13 +5,13 @@ const titulos_lista = document.querySelectorAll(".titulos_lista");
 const abrir_navLateral = document.querySelector(".botton_list");
 const menu_lateral = document.querySelector("#menu_lateral");
 const fechar_navLateral = document.querySelector(".fechar_navLateral");
+const meu_desempenho = document.querySelectorAll(".meu_desempenho");
 
 /*Variaveis do modal de Login*/
 const modal = document.querySelector("#modal");
 const conteudo_modal = document.querySelector(".conteudo_modal");
 const cadastrarLogin = document.querySelector("#cadastrarLogin");
 const modal_esqueci_senha = document.querySelector("#modal_esqueci_senha");
-
 const buttomcadastrarLogin = document.querySelector(".buttomcadastrarLogin");
 const voltarModal = document.querySelectorAll(".voltar_modal");
 const abrir_modal = document.querySelectorAll(".abrir_modal");
@@ -57,7 +57,6 @@ titulos_lista.forEach(function(titulo_lista) {
     });
 });
 
-
 /* Funções do modal Login*/
 abrir_modal.forEach((btn) => {
     btn.addEventListener("click", function () {
@@ -70,11 +69,19 @@ fechar_modal.forEach((btn) =>{
         modal.style.display = "none";
         conteudo_modal.style.display = "flex";
         cadastrarLogin.style.display = "none";
-    })
+    });
 });
 
+voltarModal.forEach((btn) => {
+    btn.addEventListener("click", function(){
+        // Oculta os outros modais
+        modal_esqueci_senha.style.display = "none";
+        cadastrarLogin.style.display = "none";
 
-
+        // Exibe o modal principal (conteudo_modal)
+        conteudo_modal.style.display = "flex";
+    });
+});
 
 esqueci_senha.addEventListener("click", function(){
     conteudo_modal.style.display = "none"
@@ -95,5 +102,11 @@ abrir_navLateral.addEventListener("click",function(){
 
 fechar_navLateral.addEventListener("click", function(){
     menu_lateral.style.display = "none"
+});
+
+meu_desempenho.forEach((btn) =>{
+    btn.addEventListener("click", function(){
+        window.location.href = "meuDesempenho.html";
+    });
 });
 /*Fim das funções de abrir o menu Lateral*/
