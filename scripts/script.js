@@ -8,11 +8,18 @@ const fechar_navLateral = document.querySelector(".fechar_navLateral");
 
 /*Variaveis do modal de Login*/
 const modal = document.querySelector("#modal");
+const conteudo_modal = document.querySelector(".conteudo_modal");
+const cadastrarLogin = document.querySelector("#cadastrarLogin");
+const modal_esqueci_senha = document.querySelector("#modal_esqueci_senha");
+
+const buttomcadastrarLogin = document.querySelector(".buttomcadastrarLogin");
+const voltarModal = document.querySelectorAll(".voltar_modal");
 const abrir_modal = document.querySelectorAll(".abrir_modal");
-const fechar_modal = document.querySelector(".fechar_modal");
+const fechar_modal = document.querySelectorAll(".fechar_modal");
 const esqueci_senha = document.querySelector("#esqueci_senha");
 
-/*Função para atualizar titulo da Lista*/
+
+/* Função para atualizar título da Lista */
 titulos_lista.forEach(function(titulo_lista) {
     titulo_lista.addEventListener("click", function() {
         const input = document.createElement("input");
@@ -25,16 +32,31 @@ titulos_lista.forEach(function(titulo_lista) {
         input.focus();
 
         input.addEventListener("blur", function() {
-            titulo_lista.textContent = input.value || "Titulo da Lista"; // Atualiza o título específico
+            if (input.value === "" || input.value === "adicione o titulo da lista...") {
+                titulo_lista.textContent = "adicione o titulo da lista..."; // Define o texto padrão
+                titulo_lista.style.color = "#8484845a"; // Cor cinza
+            } else {
+                titulo_lista.textContent = input.value; // Atualiza o título com o novo valor
+                titulo_lista.style.color = "#4A1C7D"; // Cor preta (ou outra de sua preferência)
+            }
         });
 
         input.addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
-                input.blur(); // Salva ao pressionar Enter
+                if (input.value === "" || input.value === "adicione o titulo da lista...") {
+                    titulo_lista.textContent = "adicione o titulo da lista..."; // Define o texto padrão
+                    titulo_lista.style.color = "#8484845a"; // Cor cinza
+                } else {
+                    titulo_lista.textContent = input.value; // Atualiza o título com o novo valor
+                    titulo_lista.style.color = "black"; // Cor preta
+                }
+
+                input.blur(); // Salva ao pressionar Enter     
             }
         });
     });
 });
+
 
 /* Funções do modal Login*/
 abrir_modal.forEach((btn) => {
@@ -43,12 +65,25 @@ abrir_modal.forEach((btn) => {
     });
 });
 
-fechar_modal.addEventListener("click", function(){
-    modal.style.display = "none";
+fechar_modal.forEach((btn) =>{
+    btn.addEventListener("click", function(){
+        modal.style.display = "none";
+        conteudo_modal.style.display = "flex";
+        cadastrarLogin.style.display = "none";
+    })
 });
 
+
+
+
 esqueci_senha.addEventListener("click", function(){
-    window.location.href = 'esqueci_senha.html';
+    conteudo_modal.style.display = "none"
+    modal_esqueci_senha.style.display = "flex";
+});
+
+buttomcadastrarLogin.addEventListener("click", function(){
+    conteudo_modal.style.display = "none";
+    cadastrarLogin.style.display = "flex";
 });
 /*Fim da funções do modal login*/
 

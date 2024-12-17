@@ -86,7 +86,7 @@ main > .lista{
     flex-direction: column;
     width: 90%;
     height: 300px;
-    border: 5px solid black;
+    border: 3px solid rgba(0, 0, 0, 0.441);
     margin: 5%;
 }
 
@@ -95,8 +95,9 @@ main > .lista > .titulo_lista_tarefas{
     align-items: center;
     width: 100%;
     height: 10%;
-    background-color: #6c1e9c24;
-    color: #230833;
+    padding: 1%;
+    background-color: #6c1e9c09;
+    color: #8484845a;
 }
 
 main > .lista > .list_tarefas{
@@ -106,8 +107,9 @@ main > .lista > .list_tarefas{
 }
 
 .input-editavel{
-    width: 340px;
-    height: 35px;
+    width: 300px;
+    height: 25px;
+    border: none;
     background-color: transparent;
     font-size: 1.5rem;
     font-weight: bold;
@@ -186,6 +188,20 @@ main > .lista > .list_tarefas{
     z-index: 9999;
 }
 
+#modal > #cadastrarLogin{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    height: 65%;
+    padding: 20px;
+    gap: 30px;
+}
+
 #modal > .conteudo_modal{
     display: flex;
     align-items: center;
@@ -200,12 +216,26 @@ main > .lista > .list_tarefas{
     gap: 30px;
 }
 
-#modal > .conteudo_modal > p{
+#modal > #modal_esqueci_senha{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    height: 65%;
+    padding: 20px;
+    gap: 30px;
+}
+
+#modal > .conteudo_modal > p, #modal > #cadastrarLogin > p{
     font-size: 2.0rem;
     font-weight: bold;
 }
 
-#modal > .conteudo_modal > input{
+#modal > .conteudo_modal > input, #modal > #cadastrarLogin > input{
     width: 100%;
     height: 25%;
     padding: 5px;
@@ -214,7 +244,7 @@ main > .lista > .list_tarefas{
     box-shadow: 0 1px 5px rgba(162, 162, 162, 0.555);
 }
 
-#modal > .conteudo_modal > #enviar{
+#modal > .conteudo_modal > #enviar, #modal > #cadastrarLogin > #enviar{
     width: 100%;
     height: 25%;
     padding: 5px;
@@ -225,7 +255,7 @@ main > .lista > .list_tarefas{
     cursor: pointer;
 }
 
-#modal > .conteudo_modal > .buttons_modal{
+#modal > .conteudo_modal > .buttons_modal, #modal > #cadastrarLogin > .buttons_modal{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -233,13 +263,20 @@ main > .lista > .list_tarefas{
     width: 100%;
     height: 20%;
     background-color: white;
+    gap: 5%;
 }
 
 #modal > .conteudo_modal > .buttons_modal > button{
-    width: 50%;
+    width: 30%;
     height: 100%;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+}
+
+#modal > #cadastrarLogin > .buttons_modal > button{
+    width: 35%;
+    height: 90%;
     cursor: pointer;
 }
 
@@ -247,8 +284,14 @@ main > .lista > .list_tarefas{
     color: rgb(100, 100, 255);
 }
 
+#modal > .conteudo_modal > .buttons_modal > .cadastrarLogin{
+    width: 35%;
+    background-color: bisque;
+    border-radius: 20px;
+}
+
 #modal > .conteudo_modal > .buttons_modal > .fechar_modal{
-    width: 40%;
+    width: 35%;
     background-color: bisque;
     border-radius: 20px;
 }
@@ -338,33 +381,44 @@ main > .lista > .list_tarefas{
         padding: 1%;
     }
 
-    #modal > .conteudo_modal{
+    #modal > .conteudo_modal, #modal > #cadastrarLogin{
         width: 550px;
         height: 550px;
     }
 
-    #modal > .conteudo_modal > p{
+    #modal > .conteudo_modal > p, #modal > #cadastrarLogin > p{
         font-size: 2.5rem;
     }
 
-    #modal > .conteudo_modal > input{
+    #modal > .conteudo_modal > input, #modal > #cadastrarLogin > input{
         width: 90%;
         height: 15%;
     }
 
-    #modal > .conteudo_modal > .buttons_modal{
+    #modal > .conteudo_modal > .buttons_modal, #cadastrarLogin > .buttons_modal{
         flex-direction: row;
         width: 80%;
         height: 20%;
     }
 
-    #modal > .conteudo_modal > #enviar{
+    #modal > #cadastrarLogin > .buttons_modal, #cadastrarLogin > .buttons_modal{
+        width: 80%;
+        height: 20%;
+    }
+
+
+    #modal > .conteudo_modal > #enviar, #modal > #cadastrarLogin > #enviar{
         width: 80%;
         height: 15%;
     }
 
     #modal > .conteudo_modal > .buttons_modal > button{
         width: 40%;
+        height: 80%;
+    }
+
+    #modal > #cadastrarLogin > .buttons_modal > button{
+        width: 30%;
         height: 80%;
     }
 }

@@ -40,7 +40,7 @@
     <main>
         <div class="lista">
             <div class="titulo_lista_tarefas">
-                <h2 class="titulos_lista">Titulo da Lista</h2>
+                <h2 class="titulos_lista">adicione o titulo da lista...</h2>
             </div>
             <div class="list_tarefas">
                 <div class="tarefa">
@@ -84,16 +84,39 @@
     <div id="modal">
         <div class="conteudo_modal">
             <p>Faça seu Login</p>
-            <input type="text"  placeholder="Informe seu Login" id="login">
+            <input type="text"  placeholder="Nome do Usuario" id="login">
             <input type="email" placeholder="Seu email" id="email">
             <input type="password" placeholder="Sua senha" id="senha">
             <button id="enviar">Enviar</button>
             <div class="buttons_modal">
                 <button id="esqueci_senha">Esqueci minha senha</button>
+                <button class="buttomcadastrarLogin">cadastrar</button>
                 <button class="fechar_modal">sair</button>
             </div>
         </div>
+           
+        <div id="cadastrarLogin">
+            <p>Cadastrar</p>
+            <input type="text"  placeholder="Insira um nome para o Usuario" id="login">
+            <input type="email" placeholder="Seu email" id="email">
+            <input type="password" placeholder="Insira uma senha" id="senha">
+            <button id="enviar">Cadastrar</button>
+            <div class="buttons_modal">
+                <button class="voltar_modal">Voltar</button>
+                <button class="fechar_modal">Fechar</button>
+            </div>
+        </div>
+
+        <div id="modal_esqueci_senha">
+            <h1>esqueci a senha</h1>
+
+            <div class="buttons_modal">
+                <button class="voltar_modal">Voltar</button>
+                <button class="fechar_modal">Fechar</button>
+            </div>
+        </div>
     </div>
+
     <!--Fim do Modal Login-->
     <script src="scripts/script.js"></script>
 </body>
