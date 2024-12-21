@@ -86,7 +86,10 @@
             <p>Faça seu Login</p>
             <input type="text"  placeholder="Nome do Usuario" id="login">
             <input type="email" placeholder="Seu email" id="email">
-            <input type="password" placeholder="Sua senha" id="senha">
+            <div class="inputSenhaLogin">
+                <input type="password" placeholder="Digite sua senha" id="senha">
+                <i class="bi bi-eye" id="icone_senha_login"></i>
+            </div>
             <button id="enviarLogin">Enviar</button>
             <div class="buttons_modal">
                 <button id="esqueci_senha">Esqueci minha senha</button>
@@ -100,6 +103,7 @@
             <input type="text"  placeholder="Insira um nome para o Usuario" id="loginCadastrar">
             <input type="email" placeholder="Seu email" id="emailCadastrar">
             <input type="password" placeholder="Insira uma senha" id="senhaCadastrar">
+            <input type="password" placeholder="Confirme a senha" id="confirmarSenhaCadastrar">
             <button id="enviarCadastro">Cadastrar</button>
             <div class="buttons_modal">
                 <button class="voltar_modal">Voltar</button>

@@ -18,6 +18,9 @@ const abrir_modal = document.querySelectorAll(".abrir_modal");
 const fechar_modal = document.querySelectorAll(".fechar_modal");
 const esqueci_senha = document.querySelector("#esqueci_senha");
 
+/*Variaveis do input de Login*/
+const input_login_senha = document.querySelector("#senha");
+const icone_senha_login = document.querySelector("#icone_senha_login");
 
 /* Função para atualizar título da Lista */
 titulos_lista.forEach(function(titulo_lista) {
@@ -110,3 +113,18 @@ meu_desempenho.forEach((btn) =>{
     });
 });
 /*Fim das funções de abrir o menu Lateral*/
+
+
+/*Funções do Form de Login*/
+icone_senha_login.addEventListener("click", function(){
+    if(input_login_senha.type === "password"){
+        input_login_senha.type = "text";
+        icone_senha_login.classList.remove("bi-eye");
+        icone_senha_login.classList.add("bi-eye-slash");
+    }
+    else{
+        input_login_senha.type = "password";
+        icone_senha_login.classList.remove("bi-eye-slash");
+        icone_senha_login.classList.add("bi-eye");
+    }
+});
