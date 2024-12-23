@@ -102,8 +102,14 @@
             <p>Cadastrar</p>
             <input type="text"  placeholder="Insira um nome para o Usuario" id="loginCadastrar">
             <input type="email" placeholder="Seu email" id="emailCadastrar">
-            <input type="password" placeholder="Insira uma senha" id="senhaCadastrar">
-            <input type="password" placeholder="Confirme a senha" id="confirmarSenhaCadastrar">
+            <div class="inputSenhaLogin">
+                <input type="password" placeholder="Insira uma senha" id="senhaCadastrar">
+                <i class="bi bi-eye" id="icone_cadastrar_senha"></i>
+            </div>
+            <div class="inputSenhaLogin">
+                <input type="password" placeholder="Confirme a senha" id="confirmarSenhaCadastrar">
+                <i class="bi bi-eye" id="icone_confirmar_senha"></i>
+            </div>
             <button id="enviarCadastro">Cadastrar</button>
             <div class="buttons_modal">
                 <button class="voltar_modal">Voltar</button>
