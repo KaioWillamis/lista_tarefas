@@ -25,6 +25,9 @@ const input_cadastro_login = document.querySelector("#senhaCadastrar");
 const icone_cadastrar_senha = document.querySelector("#icone_cadastrar_senha");
 const input_confirmar_senha = document.querySelector("#confirmarSenhaCadastrar");
 const icone_confirmar_senha = document.querySelector("#icone_confirmar_senha");
+const enviarLogin = document.querySelector("#enviarLogin");
+const div_senha_erro = document.querySelector("#div_senha_erro");
+const ParagrafoSenhaErro = document.querySelector("#ParagrafoSenhaErro");
 
 /* Função para atualizar título da Lista */
 titulos_lista.forEach(function(titulo_lista) {
@@ -153,5 +156,58 @@ function olhoFechado(){
     icone_cadastrar_senha.classList = "bi-eye";
     icone_confirmar_senha.classList = "bi-eye";
 }
+
+input_login_senha.addEventListener("input", function(){
+    const senha = input_login_senha.value;
+    let forca = checandoForca(senha);
+
+    input_login_senha.addEventListener("click", function(){
+        input_login_senha.style.border = "none";
+        div_senha_erro.style.display = "none";
+    });
+
+    atualizarEstadoSenha(forca);
+});
+
+function checandoForca(senha) {
+    let contador = 0;
+
+    if (senha.length >= 8) contador++;
+    if (/[a-z]/.test(senha)) contador++;
+    if (/[A-Z]/.test(senha)) contador++;
+    if (/[@$!%*?&#]/.test(senha)) contador++;
+
+    return contador;
+}
+
+function atualizarEstadoSenha(forca) {
+    const corInput = input_login_senha.style.border = "2px solid red";
+    const div_flex = div_senha_erro.style.display = "flex";
+
+    if (forca === 1) {
+        div_flex;
+        ParagrafoSenhaErro.textContent = "Senha fraca, use letras maiúsculas e caracteres especiais";
+        corInput;
+    } else if (forca === 2) {
+        div_flex;
+        ParagrafoSenhaErro.textContent = "Senha média, use letras maiúsculas e caracteres especiais!";
+        corInput;
+    } else if (forca === 4) {
+        div_senha_erro.style.display = "none";
+        input_login_senha.style.border = "2px solid green";
+    }
+}
+
+enviarLogin.addEventListener("click", function(){
+    if(input_login_senha.value.length < 8){
+        div_senha_erro.style.display = "flex";
+        ParagrafoSenhaErro.textContent = "Senha com menos de 8 Caracteres";
+        input_login_senha.style.border = "2px solid red";
+    }
+    else{
+        colocandoTextoSenhaFraca();
+    }
+    
+});
 
 /*Fim das funções do form de login*/
